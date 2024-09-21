@@ -10,7 +10,7 @@ export class VoteService {
     return this.prisma.vote.create({
       data: {
         restaurantId: createVoteDto.restaurantId,
-        userId: createVoteDto.userId, // This should work now
+        userId: createVoteDto.userId, 
       },
     });
   }

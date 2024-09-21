@@ -7,5 +7,5 @@ export class CreateFoodPackDto {
   name: string;
 
   @ApiProperty()
-  restaurantId: number; // Assuming the food pack is linked to a specific restaurant
+  restaurantId: number;
 }
