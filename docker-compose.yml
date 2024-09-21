@@ -1,0 +1,18 @@
+version: '3'
+services:
+  backend:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "postgresql://postgres:admin@db:5432/lunchvote"
+    depends_on:
+      - db
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: lunchvote
+    ports:
+      - "5432:5432"
