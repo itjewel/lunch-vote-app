@@ -3,7 +3,7 @@ version: '3.8'
 services:
   frontend:
     build:
-      context: ./lunch-vote-frontend
+      context: ./lunch-vote-frontend  # Ensure this directory exists in your project root
       dockerfile: Dockerfile
     ports:
       - "3001:3001"
@@ -11,15 +11,17 @@ services:
       - ./lunch-vote-frontend:/app
     environment:
       - NEXT_PUBLIC_API_URL=http://backend:3000  # Reference backend service in Docker
+    depends_on:
+      - backend
 
   backend:
     build:
-      context: ./lunch-vote-backend
+      context: ./lunch-vote-backend  # Ensure this directory exists in your project root
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
-      - ./lunch-vote-backend:/usr/src/app
+      - ./lunch-vote-backend:/app
     environment:
       - DATABASE_URL=postgresql://postgres:admin@db:5432/lunchvote  # Database connection
     depends_on:
