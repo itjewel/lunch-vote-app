@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./lunch-vote-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./lunch-vote-frontend:/app
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:3000  # Reference backend service in Docker
+
+  backend:
+    build:
+      context: ./lunch-vote-backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./lunch-vote-backend:/usr/src/app
+    environment:
+      - DATABASE_URL=postgresql://postgres:admin@db:5432/lunchvote  # Database connection
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: lunchvote
+    ports:
+      - "5432:5432"
+
+networks:
+  default:
+    driver: bridge
