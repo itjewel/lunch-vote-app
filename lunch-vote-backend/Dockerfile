@@ -1,18 +1,20 @@
 # Base image
 FROM node:16-alpine
 
-# Set working directory
+# Set working directory for backend
 WORKDIR /usr/src/app
 
-# Copy package.json and install dependencies
-COPY package*.json ./
-RUN npm install
+# Copy package.json and yarn.lock (or package-lock.json)
+COPY lunch-vote-backend/package.json lunch-vote-backend/yarn.lock ./
 
-# Copy all files
-COPY . .
+# Install dependencies
+RUN yarn install
 
-# Expose the port
+# Copy all backend files
+COPY lunch-vote-backend .
+
+# Expose port 3000
 EXPOSE 3000
 
-# Start the application
-CMD ["npm", "run", "start:dev"]
+# Start the application in development mode
+CMD ["yarn", "dev"]

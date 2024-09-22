@@ -32,7 +32,7 @@ model Vote {
   id           Int        @id @default(autoincrement())
   restaurantId Int
   restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
-  userId       Int?       // Optional user ID field
+  foodPackId       Int?       // Optional user ID field
   createdAt    DateTime   @default(now())
 }
 

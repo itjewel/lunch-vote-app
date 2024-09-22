@@ -8,5 +8,5 @@ export class CreateVoteDto {
 
   @ApiProperty({ example: 1 }) 
   @IsInt()
-  userId: number; 
+  foodPackId: number; 
 }
