@@ -7,14 +7,22 @@ export class VoteService {
   constructor(private readonly prisma: PrismaService) {}
 
   async create(createVoteDto: CreateVoteDto) {
+    const restaurantExists = await this.prisma.restaurant.findUnique({
+      where: { id: createVoteDto.restaurantId },
+    });
+  
+    if (!restaurantExists) {
+      throw new Error(`Restaurant with ID ${createVoteDto.restaurantId} does not exist.`);
+    }
+  
     return this.prisma.vote.create({
       data: {
         restaurantId: createVoteDto.restaurantId,
-        foodPackId: createVoteDto.foodPackId, 
+        foodPackId: createVoteDto.foodPackId,
       },
     });
   }
-
+  
   async getDailyWinner() {
     const votes = await this.prisma.vote.findMany({
       select: {

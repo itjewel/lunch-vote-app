@@ -1,22 +1,20 @@
-# Base image
-FROM node:16-alpine
+# Use Node 18 for compatibility
+FROM node:18-alpine
 
-# Set working directory for backend
+# Set working directory for frontend
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy package.json and package-lock.json first to leverage Docker layer caching
 COPY package.json package-lock.json ./
 
-# Install dependencies using npm
+# Install dependencies
 RUN npm install
 
-# Copy all backend files to the working directory
+# Copy all frontend source code to the working directory
 COPY . .
 
 # Expose port 3001
 EXPOSE 3001
 
 # Start the application in development mode
-CMD ["npm", "run", "dev","-p", "3001"]
-
-
+CMD ["npm", "run", "dev"]

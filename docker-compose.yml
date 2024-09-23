@@ -9,6 +9,7 @@ services:
       - "3001:3001"
     volumes:
       - ./lunch-vote-frontend:/app
+       - /app/node_modules
     environment:
       - NEXT_PUBLIC_API_URL=http://backend:3000  # Reference backend service in Docker
     depends_on:
@@ -22,6 +23,7 @@ services:
       - "3000:3000"
     volumes:
       - ./lunch-vote-backend:/app
+       - /app/node_modules
     environment:
       - DATABASE_URL=postgresql://postgres:admin@db:5432/lunchvote  # Database connection
     depends_on:
