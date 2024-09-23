@@ -59,11 +59,8 @@ Product Structure: App Name `Lunch-vote-app` then enter inside after that you se
 3. Get data: http://localhost:3000/votes/winner
 
 
-## After Install you will get Frontend
+## After Install you will get Frontend & Backend
 Frontend Link: http://localhost:3001/
-
-
-## After Install you will get Backend
 Frontend Link: http://localhost:3000/
 
 ## Preview of Home Page Feature
