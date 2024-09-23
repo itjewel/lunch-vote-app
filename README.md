@@ -57,3 +57,32 @@ Product Structure: App Name `Lunch-vote-app` then enter inside after that you se
 **_ Winner Restaurant _**
 
 3. Get data: http://localhost:3000/votes/winner
+
+
+## Preview of Home Page Feature
+
+Here is a preview of the Home Page feature:
+
+![Home Pack Feature](https://github.com/itjewel/lunch-vote-app/blob/main/screenshort/home_page.png)
+
+
+
+## Preview of Restaurant Api
+
+Here is a preview of the Restaurant Post:
+
+![Post Restaurant Feature](https://github.com/itjewel/lunch-vote-app/blob/main/screenshort/post_restaurant.png)
+
+
+## Preview of Food Pack Feature
+
+Here is a preview of the Food Pack feature:
+
+![Food Pack Feature](https://github.com/itjewel/lunch-vote-app/blob/main/screenshort/foodPack.png)
+
+
+## Preview of Winninn Feature
+
+Here is a preview of the Winner API feature:
+
+![Winner Feature](https://github.com/itjewel/lunch-vote-app/blob/main/screenshort/winner.png)
