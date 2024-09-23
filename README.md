@@ -22,7 +22,7 @@ Product Structure: App Name `Lunch-vote-app` then enter inside after that you se
 
 1. Go into the folder `lunch-vote-app` then open terminal & run command `npx prisma migrate dev`
 
-**_ Or Docker RUN _**
+**_ Docker RUN _**
 
 1. Go `Lunch-vote-app` into the root folder then run `docker-compose up --build`
 2. After starting your containers with docker-compose up, run the migration manually
@@ -45,7 +45,7 @@ Product Structure: App Name `Lunch-vote-app` then enter inside after that you se
    "restaurantId": 3
    }
 
-**_ Food Pack _**
+**_ Votes _**
 
 1. Get data: http://localhost:3000/votes
 2. Post Data: http://localhost:3000/votes
@@ -54,6 +54,6 @@ Product Structure: App Name `Lunch-vote-app` then enter inside after that you se
    "foodPackId": 2
    }
 
-   **_ Winner Restaurant _**
+**_ Winner Restaurant _**
 
 3. Get data: http://localhost:3000/votes/winner
