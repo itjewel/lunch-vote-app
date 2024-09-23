@@ -63,7 +63,7 @@ Product Structure: App Name `Lunch-vote-app` then enter inside after that you se
 
 Here is a preview of the Home Page feature:
 
-![Home Pack Feature](https://github.com/itjewel/lunch-vote-app/blob/main/screenshort/home_page.png)
+![Home Pack Feature](https://github.com/itjewel/lunch-vote-app/blob/main/screenshort/homePage.png)
 
 
 
